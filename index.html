@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelPulse | System Status</title>
+    <!-- Favicon (Sekme İkonu) -->
+    <link rel="icon" type="image/png" href="PixelPulse.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="PixelPulse.png" alt="PixelPulse Logo" class="pulse-icon-img">
+                <h1>Pixel<span>Pulse</span></h1>
+            </div>
+
+            <!-- Sağ üst menü ve durum alanı -->
+            <div class="header-right" style="display: flex; align-items: center; gap: 15px;">
+                <nav class="top-nav">
+                    <a href="sites.html" class="nav-btn" style="color: var(--text-color, #fff); background: rgba(255, 255, 255, 0.05); padding: 8px 14px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; display: flex; align-items: center; gap: 6px;">
+                        <i class="fa-solid fa-globe"></i> Siteler
+                    </a>
+                </nav>
+                <div class="global-status" id="globalStatus">
+                    <span class="status-dot loading"></span>
+                    <span id="globalStatusText">Sistemler Kontrol Ediliyor...</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="services-grid">
+            <!-- PixelCore Card -->
+            <div class="card" id="card-pixelcore">
+                <div class="card-header">
+                    <div class="service-info">
+                        <i class="fa-solid fa-robot service-icon"></i>
+                        <div>
+                            <h3>PixelCore</h3>
+                            <p class="service-sub">Discord Bot & Service</p>
+                        </div>
+                    </div>
+                    <span class="badge loading" id="badge-pixelcore">Kontrol Ediliyor</span>
+                </div>
+                <div class="card-body">
+                    <div class="metric">
+                        <span>Gecikme (Ping)</span>
+                        <strong id="ping-pixelcore">-- ms</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Çalışma Süresi</span>
+                        <strong id="uptime-pixelcore">--</strong>
+                    </div>
+                    <div class="tags" style="margin-top: 10px;">
+                        <span>Discord.js</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onyx AI Card (Silindi - Kırmızı Tema) -->
+            <div class="card card-deleted" id="card-onyxai">
+                <div class="card-header">
+                    <div class="service-info">
+                        <i class="fa-solid fa-brain service-icon icon-deleted"></i>
+                        <div>
+                            <h3>Onyx AI</h3>
+                            <p class="service-sub">Discord Bot & Intelligence</p>
+                        </div>
+                    </div>
+                    <span class="badge offline" id="badge-onyxai">Silindi</span>
+                </div>
+                <div class="card-body">
+                    <div class="metric">
+                        <span>Gecikme (Ping)</span>
+                        <strong id="ping-onyxai" style="color: var(--neon-pink);">N/A</strong>
+                    </div>
+                    <div class="metric">
+                        <span>Çalışma Süresi</span>
+                        <strong>Servis Yok</strong>
+                    </div>
+                    <!-- Eklenen reason alanı -->
+                    <div class="metric">
+                        <span>Durum Detayı</span>
+                        <strong id="reason-onyxai" style="color: var(--neon-pink); font-size: 0.8rem;">Proje sonlandırıldı</strong>
+                    </div>
+                    <div class="tags" style="margin-top: 10px;">
+                        <span>Discord.py</span>
+                        <span>Python 3</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Son Güncelleme: <span id="lastUpdate">--:--:--</span></p>
+            <p class="refresh-note">Veriler her 10 saniyede bir otomatik yenilenir.</p>
+            <p class="copyright" style="margin-top: 8px; font-size: 0.75rem; color: var(--text-muted);">© 2026 The Pixel Devs. Telif hakları saklıdır.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
